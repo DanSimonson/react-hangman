@@ -5,16 +5,17 @@ import { bounce, tada } from 'react-animations';
 
 const bounceAnimation = keyframes`${bounce}`;
 const tadaAnimation = keyframes`${tada}`
+
 const BouncyP = styled.p`
   animation: 1.5s ${bounceAnimation};
   font-size:2rem;
   color: green;
-  text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px darkgreen;
+  text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px darkgreen;  
 `;
 const H_Style = styled.p`
   animation: 1.5s ${tadaAnimation};
   text-align: center;
-  color: green;
+  color: black;
   letter-spacing: 1em;
   margin: 0.4em -1em 0.2em 0;
   font-size: 1rem;

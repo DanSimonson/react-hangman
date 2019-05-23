@@ -2,6 +2,7 @@ import React from 'react'
 import "../Styles.scss"
 import styled, { keyframes } from 'styled-components';
 import { bounce, tada } from 'react-animations';
+import { AnimateOnChange } from 'react-animation'
 
 const tadaAnimation = keyframes`${tada}`
 
@@ -19,7 +20,13 @@ function Header(props) {
   return (
     <div className='header'>
       <H_Style>Hangman</H_Style>
+      <AnimateOnChange
+          animationIn="fadeIn"
+          animationOut="fadeOut"
+          durationOut={500}
+        >
       <img src={props.myImages[props.wrongAnswers]} alt='img' />  
+      </AnimateOnChange>
     </div>
   )
 }
