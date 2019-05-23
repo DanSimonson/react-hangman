@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Hangman.scss";
 import "../Styles.scss"
+import styled from 'styled-components';
 import Guessed from "../Guessed/Guessed";
 import Buttons from "../Buttons/Buttons"
 import Header from "../Header/Header"
@@ -12,6 +13,7 @@ import img4 from '../Assets/Images/h5.png'
 import img5 from '../Assets/Images/h6.png'
 import img6 from '../Assets/Images/hh.png'
 import Words, { randomWord } from '../Assets/Words/Words'
+
 
 class Hangman extends Component {
   static defaultProps = {
@@ -66,6 +68,7 @@ class Hangman extends Component {
     return (
       <div className='hangman'>
         <Header
+        
         wrongAnswers={this.state.wrong}
         myImages={this.state.images}        
         />

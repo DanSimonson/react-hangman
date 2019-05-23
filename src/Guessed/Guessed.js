@@ -1,5 +1,14 @@
 import React, { Component } from "react";
 import '../Styles.scss'
+import styled from 'styled-components';
+const H_Style = styled.p`
+  text-align: center;
+  color: #05386b;
+  letter-spacing: 1em;
+  margin: 0.4em -1em 0.2em 0;
+  font-size: 1rem;
+  text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px darkgreen;
+`;
 export class Guessed extends Component {
   constructor(props) {
     super(props)
@@ -21,8 +30,9 @@ export class Guessed extends Component {
     let gameOver =  this.props.myState.wrong  >= this.props.myState.maxW;     
     return (
     <div>
-      <p>Number Wrong: {this.props.myState.wrong}</p>
-      <p className='Hangman-word'>{!gameOver ? this.guessedWord() : this.props.myState.answer}</p>
+      <H_Style>Number Wrong: {this.props.myState.wrong} </H_Style>
+      {/*<p className='header'>Number Wrong: {this.props.myState.wrong}</p>*/}
+      <H_Style className='Hangman-word' >{!gameOver ? this.guessedWord() : this.props.myState.answer}</H_Style>
       {this.guessedWord().join("") === this.props.myState.answer && <p>You Win</p>}
     </div>
     )
