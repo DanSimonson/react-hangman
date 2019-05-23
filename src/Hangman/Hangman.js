@@ -13,6 +13,7 @@ import img4 from '../Assets/Images/h5.png'
 import img5 from '../Assets/Images/h6.png'
 import img6 from '../Assets/Images/hh.png'
 import Words, { randomWord } from '../Assets/Words/Words'
+import { AnimateOnChange } from 'react-animation'
 
 
 class Hangman extends Component {
@@ -56,6 +57,7 @@ class Hangman extends Component {
       guess: new Set(),
       answer: randomWord()
     })
+    window.location.reload(false);
   }
 
   render() {
@@ -66,16 +68,23 @@ class Hangman extends Component {
     console.log('answer: ', this.state.answer)
     console.log('gameOver: ', gameOver)
     return (
+     
       <div className='hangman'>
-        <Header
-        
+        <Header        
         wrongAnswers={this.state.wrong}
         myImages={this.state.images}        
         />
+         <animateOnChange
+      animationIn="bounceIn"
+      animationOut="bounceOut"
+      durationOut={500}
+      > 
         <Guessed  myState={this.state}/>
+        </animateOnChange> 
         {!gameOver && <p className='Hangman-btns'>{this.generateButtons()}</p>}
         <Buttons myState={this.state} triggerRestart={this.restart}/>
       </div>
+      
     )
   }
 }

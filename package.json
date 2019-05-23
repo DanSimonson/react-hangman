@@ -5,6 +5,8 @@
   "dependencies": {
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
+    "react-animation": "^1.0.9",
+    "react-animations": "^1.0.0",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
     "styled-components": "^4.2.0"
